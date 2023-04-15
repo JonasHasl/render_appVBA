@@ -7,10 +7,9 @@ from dash.dependencies import Input, Output
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.CYBORG], 
                 meta_tags=[{'name' :'viewport', 'content':'width=device-width, initial-scale=1'}])
 
-server=app.server
 # Define colors and fonts
 colors = {
-    'background': '002060',
+    'background': '#002060',
     'text': 'black',
     'accent': '#C4C4C4'
 }
@@ -93,7 +92,8 @@ vba_tab = html.Div(
         'border': 'none',
         'color': colors['text'],
         'font-family': fonts['body'],
-        'text-align': 'center'
+        'text-align': 'center',
+        'height': '100vh'
     }
 )
 
@@ -115,7 +115,8 @@ macros_tab = html.Div(
         'color': colors['text'],
         'font-family': fonts['body'],
         'text-align': 'center',
-        'border-radius': '10px'
+        'border-radius': '10px',
+        'height': '100vh'
     }
 )
 
@@ -150,7 +151,8 @@ userform_tab = html.Div(
         'color': colors['text'],
         'font-family': fonts['body'],
         'text-align': 'center',
-        'border-radius': '10px'
+        'border-radius': '10px',
+        'height': '100vh'
     })
 
 
@@ -176,7 +178,8 @@ contact_tab = html.Div(
         'border': 'none',
         'color': colors['text'],
         'font-family': fonts['body'],
-        'text-align': 'center'
+        'text-align': 'center',
+        'height': '100vh'
     }
 )
 
@@ -304,7 +307,8 @@ dbc.Row([
     ],
     #className="mb-4",
     ),
-    ], style ={'text-align':'center'}
+    ], style ={'text-align':'center', 'height': '100vh'},
+
     )
 
 #Define the resume tab
