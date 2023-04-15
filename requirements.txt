@@ -1,0 +1,12 @@
+colorama==0.4.6
+dash==2.6.0
+pandas
+dash-core-components==2.0.0
+dash-html-components==2.0.0
+dash-table==5.0.0
+itsdangerous==2.1.2
+MarkupSafe==2.1.2
+packaging==23.1
+plotly==5.14.1
+tenacity==8.2.2
+Werkzeug==2.2.3
