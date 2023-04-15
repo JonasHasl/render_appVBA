@@ -7,6 +7,7 @@ from dash.dependencies import Input, Output
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.CYBORG], 
                 meta_tags=[{'name' :'viewport', 'content':'width=device-width, initial-scale=1'}])
 
+server=app.server
 # Define colors and fonts
 colors = {
     'background': '002060',
