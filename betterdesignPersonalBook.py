@@ -6,7 +6,7 @@ from dash.dependencies import Input, Output
 
 app = dash.Dash(__name__,
                 external_stylesheets=[dbc.themes.CYBORG],
-                meta_tags=[{'name' :'viewport', 'content':'width=device-width, initial-scale=1, height=device-height'}])
+                meta_tags=[{'name' :'viewport', 'content':'width=device-width, initial-scale=0.5, height=device-height'}])
 
 app.title = 'VBA Services'
 
@@ -28,7 +28,7 @@ fonts = {
 image_src = r'assets/automation.png'
 # Define content for the card
 
-card_content = [html.H1("VBA In MS Office Tailored Solutions", className="card-title", style={'color':'black'}), html.P("Unlocking the Power of VBA for workflows in MS Office: Enhancing Efficiency and Driving Business Growth", className="card-text"),        html.Hr(),        dbc.Row([        dbc.Col([            html.P("VBA is a powerful tool for improving your organization's efficiency and removing repetitive work for your employees. Our customized solutions in VBA not only enhance operational efficiency, but also empower your employees to achieve their full potential by providing them with a streamlined and user-friendly workflow. Our mission is to optimize your business processes, elevate your team's productivity and ultimately improving the overall quality of life within your organization.", style={'textAlign':'left'}),        ], width=7),
+card_content = [html.H1("VBA in MS Office Tailored Solutions", className="card-title", style={'color':'black'}), html.P("Unlocking the Power of VBA for workflows in MS Office: Enhancing Efficiency and Driving Business Growth", className="card-text"),        html.Hr(),        dbc.Row([        dbc.Col([            html.P("VBA is a powerful tool for improving your organization's efficiency and removing repetitive work for your employees. Customized solutions in VBA not only enhance operational efficiency, but also empower your employees to achieve their full potential by providing them with a streamlined and user-friendly workflow.", style={'textAlign':'left'}),        ], width=7),
         dbc.Col([], width=2), dbc.Col([dbc.CardImg(src=image_src,style={'display': 'block'})], width=3, style={'text-align': 'right'}),
     ]),
 ]
@@ -168,11 +168,10 @@ contact_tab = html.Div(
         dbc.Card(
             dbc.CardBody(
                 [
-                    html.P("If you have any questions or inquiries, please feel free to contact us using the information below:"),
+                    html.P("If you have any questions or inquiries, please feel free to contact me using the information below:"),
                     html.Hr(),
                     html.P("Email: jonas_fbh@hotmail.com"),
                     html.P("LinkedIn: https://www.linkedin.com/in/jonashasl"),
-
                     html.P("Phone: +47 45101329")], style={'background': 'white', 'border-radius': '10px'},
             )
         )
