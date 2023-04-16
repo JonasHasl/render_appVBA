@@ -8,7 +8,7 @@ app = dash.Dash(__name__,
                 external_stylesheets=[dbc.themes.CYBORG],
                 meta_tags=[{'name' :'viewport', 'content':'width=device-width, initial-scale=0.5, height=device-height'}])
 
-app.title = 'VBA Services'
+app.title = 'VBA Solutions'
 
 server = app.server
 
@@ -87,9 +87,9 @@ vba_tab = html.Div(
                     ), style={'background': 'white',
                 'border-radius': '10px'},
                 ),
-                
-            
-            
+
+
+
         ])
     ],
     #className="mt-5",
@@ -323,7 +323,7 @@ resume_tab = html.Div(
      html.A("Download my resume", href="/assets/resume.pdf", target="_blank"),
      ]
     )
-    
+
 app.layout = dbc.Container(
     [
         card,
