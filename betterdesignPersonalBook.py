@@ -8,6 +8,8 @@ app = dash.Dash(__name__,
                 external_stylesheets=[dbc.themes.CYBORG],
                 meta_tags=[{'name' :'viewport', 'content':'width=device-width, initial-scale=1, height=device-height'}])
 
+app.title = 'VBA Services'
+
 server = app.server
 
 # Define colors and fonts
