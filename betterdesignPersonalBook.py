@@ -4,9 +4,12 @@ from dash import dcc
 from dash import html
 from dash.dependencies import Input, Output
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.CYBORG], 
-                meta_tags=[{'name' :'viewport', 'content':'width=device-width, initial-scale=1'}])
+app = dash.Dash(__name__,
+                external_stylesheets=[dbc.themes.CYBORG],
+                meta_tags=[{'name' :'viewport', 'content':'width=device-width, initial-scale=1, height=device-height'}])
+
 server = app.server
+
 # Define colors and fonts
 colors = {
     'background': '#002060',
@@ -39,7 +42,7 @@ card = dbc.Card(
         'color': colors['text'],
         'font-family': fonts['body'],
         'text-align': 'center',
-        'width':'80%',
+        'width':'70%',
         'margin-top':'50px'
     }
 )
@@ -48,7 +51,7 @@ tabs = dbc.Tabs(
     [dbc.Tab(label="VBA", tab_id="vba"),
      dbc.Tab(label="Macros", tab_id="macros"),
      dbc.Tab(label='UserForms: "Mini Applications"', tab_id="userforms"),
-     dbc.Tab(label='Projects Showcase', tab_id="previousprojects"),
+     dbc.Tab(label='Projects', tab_id="previousprojects"),
      dbc.Tab(label="Contact", tab_id="contact")],
     id="tabs",
     active_tab="vba",
@@ -60,7 +63,8 @@ tabs = dbc.Tabs(
         'text-align': 'center',
         #'width':'80%',
         'align-items':'center',
-        'margin-bottom':'20px'
+        'margin-bottom':'20px',
+        'background-color' : colors['background']
     }
 )
 
@@ -151,8 +155,7 @@ userform_tab = html.Div(
         'color': colors['text'],
         'font-family': fonts['body'],
         'text-align': 'center',
-        'border-radius': '10px',
-        'height': '100vh'
+        'border-radius': '10px'
     })
 
 
@@ -209,7 +212,7 @@ def render_tab_content(active_tab):
 #Define the previous projects tab
 
 previousprojects_tab = html.Div([
-html.H2("Projects Showcase"),
+html.H2("Projects"),
 dbc.Row([
     dbc.Col([
         dbc.Card(
@@ -220,8 +223,8 @@ dbc.Row([
                     style={'width':'60%', 'height':'60%'}
                     )],style={ 'display': 'flex',
                 'justify-content': 'center',
-                'align-items': 'center',
-                'height': '100%'}),
+                'align-items': 'center'}),
+                #'height': '100%'}),
                 dbc.CardBody(
                     [
                         html.H4(
@@ -253,8 +256,8 @@ dbc.Row([
                     style={'width':'60%', 'height':'60%', 'text-align':'center'}
                     )],style={ 'display': 'flex',
                 'justify-content': 'center',
-                'align-items': 'center',
-                'height': '100%'}),
+                'align-items': 'center'}),
+                #'height': '100%'}),
                 dbc.CardBody(
                     [
                         html.H4(
@@ -282,12 +285,12 @@ dbc.Row([
                 dbc.CardImg(
                     src="assets/data.png",
                     top=True,
-                    style={'height': '100%'}
+                    #style={'height': '100%'}
                     ),
                 dbc.CardBody(
                     [
                         html.H4(
-                            "Data User Forms",
+                            "Data UserForms",
                             className="card-title",
                             style={'background':'white',
                    'color':'black'}
@@ -305,9 +308,10 @@ dbc.Row([
                    'color':'black'})], width=4, align="top"
         ),
     ],
+    style={},
     #className="mb-4",
     ),
-    ], style ={'text-align':'center', 'height': '100vh'},
+    ], style ={'text-align':'center'},
 
     )
 
@@ -327,7 +331,8 @@ app.layout = dbc.Container(
             [
                 html.Div(id="tab-content"),
             ], style={'width':'70%',
-                      'border-radius': '10px'},
+                      'border-radius': '10px',
+                      },
             #className="mt-4",
         ),
     ],
@@ -341,7 +346,8 @@ app.layout = dbc.Container(
     'fontSize': 18,
     'display': 'flex',
     'flex-direction': 'column',
-    'align-items': 'center'
+    'align-items': 'center',
+    'min-height': '100vh'
 }
 )
 
